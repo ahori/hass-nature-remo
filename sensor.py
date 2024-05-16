@@ -3,8 +3,7 @@ import logging
 
 from homeassistant.const import (
     CONF_ACCESS_TOKEN,
-    ENERGY_KILO_WATT_HOUR,
-    POWER_WATT,
+    UnitOfPower,
     DEVICE_CLASS_POWER,
 )
 from . import DOMAIN, NatureRemoBase
@@ -33,7 +32,7 @@ class NatureRemoE(NatureRemoBase):
 
     def __init__(self, coordinator, appliance):
         super().__init__(coordinator, appliance)
-        self._unit_of_measurement = POWER_WATT
+        self._unit_of_measurement = UnitOfPower.WATT
 
     @property
     def state(self):

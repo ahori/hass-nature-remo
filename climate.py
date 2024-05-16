@@ -16,7 +16,7 @@ from homeassistant.components.climate.const import (
     SUPPORT_SWING_MODE,
     SUPPORT_TARGET_TEMPERATURE,
 )
-from homeassistant.const import ATTR_TEMPERATURE, TEMP_CELSIUS
+from homeassistant.const import ATTR_TEMPERATURE, UnitOfTemperature
 from . import DOMAIN, CONF_COOL_TEMP, CONF_HEAT_TEMP, NatureRemoBase
 
 _LOGGER = logging.getLogger(__name__)
@@ -93,7 +93,7 @@ class NatureRemoAC(NatureRemoBase, ClimateEntity):
     @property
     def temperature_unit(self):
         """Return the unit of measurement which this thermostat uses."""
-        return TEMP_CELSIUS
+        return UnitOfTemperature.CELSIUS
 
     @property
     def min_temp(self):
